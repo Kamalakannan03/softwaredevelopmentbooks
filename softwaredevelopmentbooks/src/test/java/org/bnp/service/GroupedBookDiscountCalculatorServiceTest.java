@@ -1,16 +1,17 @@
-package org.bnp.model;
+package org.bnp.service;
 
+import org.bnp.model.GroupedBookDiscount;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class GroupedBookDiscountCalculatorService {
+public class GroupedBookDiscountCalculatorServiceTest {
     private GroupedBookDiscountCalculatorService discountCalculator;
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         List<GroupedBookDiscount> discounts = List.of(
                 new GroupedBookDiscount(2, 5),   // 2 different books → 5% discount
                 new GroupedBookDiscount(3, 10),  // 3 different books → 10% discount
