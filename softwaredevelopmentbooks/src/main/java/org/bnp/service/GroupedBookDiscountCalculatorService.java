@@ -2,6 +2,7 @@ package org.bnp.service;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.bnp.model.GroupedBook;
 import org.bnp.model.GroupedBookDiscount;
 
 import java.util.List;
@@ -16,5 +17,8 @@ public class GroupedBookDiscountCalculatorService {
                 .map(GroupedBookDiscount::getDiscount)
                 .findFirst()
                 .orElse(0);
+    }
+    public int calculateTotalDiscount(List<GroupedBook> groupedBookList) {
+        return 0;
     }
 }
