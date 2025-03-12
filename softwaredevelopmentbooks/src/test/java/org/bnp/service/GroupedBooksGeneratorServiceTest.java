@@ -12,8 +12,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class GroupedBooksAggregatorServiceTest {
-    private GroupedBooksAggregatorService groupedBooksAggregatorService;
+public class GroupedBooksGeneratorServiceTest {
+    private GroupedBooksGeneratorService groupedBooksGeneratorService;
 
     @Before
     public void setUp() {
@@ -22,7 +22,7 @@ public class GroupedBooksAggregatorServiceTest {
                 new GroupedBookDiscount(3, 10),  // 3 different books → 10% discount
                 new GroupedBookDiscount(4, 20)   // 4 different books → 20% discount
         );
-        groupedBooksAggregatorService = new GroupedBooksAggregatorService(new GroupedBookDiscountCalculatorService(discounts));
+        groupedBooksGeneratorService = new GroupedBooksGeneratorService(new GroupedBookDiscountCalculatorService(discounts));
     }
     @Test
     public void shouldGenerateMultipleGroupedBooksWhenCartHasMoreThanMaxSetSize() {
@@ -31,7 +31,7 @@ public class GroupedBooksAggregatorServiceTest {
         cartItems.add(new CartItem(new Book("Book B"), 2));
         cartItems.add(new CartItem(new Book("Book C"), 2));
 
-        List<GroupedBook> groupedBooks = groupedBooksAggregatorService.generateGroupedBooks(cartItems, 3);
+        List<GroupedBook> groupedBooks = groupedBooksGeneratorService.generateGroupedBooks(cartItems, 3);
 
         assertEquals(2, groupedBooks.size());
         assertEquals(3, groupedBooks.get(0).getBooks().size());

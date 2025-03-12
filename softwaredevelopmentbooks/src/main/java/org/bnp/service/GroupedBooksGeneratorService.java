@@ -4,14 +4,13 @@ import lombok.AllArgsConstructor;
 import org.bnp.domain.Book;
 import org.bnp.domain.CartItem;
 import org.bnp.model.GroupedBook;
-import org.bnp.utility.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
 @AllArgsConstructor
-public class GroupedBooksAggregatorService {
+public class GroupedBooksGeneratorService {
     private final GroupedBookDiscountCalculatorService groupedBookDiscountCalculatorService;
     public List<GroupedBook> generateGroupedBooks(List<CartItem> cartItemList, int maxSetSize) {
         List<CartItem> itemsCopy = cloneCartItems(cartItemList);
