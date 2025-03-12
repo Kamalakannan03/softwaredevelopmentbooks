@@ -57,7 +57,7 @@ public class GroupedBookDiscountCalculatorServiceTest {
                 new GroupedBook(groupedBookSetThree,20)    // Third set has a 20% discount
         );
 
-        int totalDiscount = discountCalculator.calculateTotalDiscount(groupedBookList);
+        int totalDiscount = discountCalculator.getTotalDiscount(groupedBookList);
         assertEquals(35, totalDiscount);
     }
 }

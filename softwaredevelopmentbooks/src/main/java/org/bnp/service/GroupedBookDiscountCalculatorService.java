@@ -18,7 +18,7 @@ public class GroupedBookDiscountCalculatorService {
                 .findFirst()
                 .orElse(0);
     }
-    public int calculateTotalDiscount(List<GroupedBook> groupedBookList) {
-        return 0;
+    public int getTotalDiscount(List<GroupedBook> groupedBookList) {
+        return groupedBookList.stream().mapToInt(GroupedBook::getDiscount).sum();
     }
 }
